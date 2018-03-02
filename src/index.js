@@ -1,16 +1,12 @@
 module.exports = function check(str, bracketsConfig) {
 
-    let stack = [];
-    for (let i = 0; i < str.length; i++) {
-        stack.push(str[i]);
-    }
+    let length = str.length;
 
-    if (stack[0] === bracketsConfig[0][0] && stack[1] === bracketsConfig[0][1]) {
+    if (str[0] === bracketsConfig[0][0] && (str[length - 1] === bracketsConfig[0][0 + 1] || str[0 + 1] === bracketsConfig[0][0 + 1])) {
         return true;
     } else {
         return false;
     }
 }
-
 
 
